@@ -1,0 +1,408 @@
+/* --- Reset & Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #0b4f4a;
+    overflow-x: hidden;
+}
+
+section {
+    width: 100%;
+    padding: 100px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0b4f4a;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+
+
+/* --- Hero Section --- */
+/* .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 5%;
+    min-height: 70vh;
+} */
+
+.hero {
+    min-height: 100dvh;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding-top: 120px;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 0.95rem;
+    color: #666; /* Warna teks abu untuk paragraf */
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+/* --- Gambar Profil dengan Efek Layer --- */
+.hero-image-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+/* Layer belakang (warna hijau tua) */
+.hero-image-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    background-color: #0b4f4a;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Bentuk blob */
+    z-index: 1;
+}
+
+/* Foto utama */
+.profile-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Bentuk blob sama */
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+
+
+/* --- Social Icons --- */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: -30px; /* Menarik ke atas sedikit */
+    margin-bottom: 50px;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #0b4f4a;
+    border-radius: 50%;
+    color: #0b4f4a;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #0b4f4a;
+    color: #fff;
+}
+
+
+
+/* About Section */
+.about-page-section {
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+.about-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #0b4f4a;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.about-content {
+    max-width: 750px;
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    line-height: 1.8;
+    color: #555; /* Abu-abu untuk paragraf */
+    margin-bottom: 40px;
+    padding: 0 10px;
+}
+
+.btn-download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 0 auto;
+
+    padding: 14px 35px;
+    background-color: #0b4f4a;
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 50px; /* Bentuk pill */
+    border: 2px solid #0b4f4a;
+    
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-download:hover {
+    background-color: transparent;
+    color: #0b4f4a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(11, 79, 74, 0.2);
+}
+
+
+/* --- Projects Section --- */
+.projects-section {
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.page-section {
+    width: 100%;
+    padding: 100px 5% 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #0b4f4a;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.section-desc {
+    text-align: center;
+    justify-content: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.projects-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.projects-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.projects-card h2 {
+    padding: 15px;
+    text-align: center;
+    color: #0b4f4a;
+    font-size: 1rem;
+}
+
+
+/* --- Contact Form Section --- */
+.contact-section {
+    background-color: #0b4f4a; /* Background hijau tua penuh */
+    padding: 60px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-section h2 {
+    color: #f4f4f4;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Gaya Input Bergaris Bawah */
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 10px 0;
+    color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: rgba(244, 244, 244, 0.6);
+}
+
+.input-group textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* Tombol Send Message */
+.btn-send {
+    margin-top: 20px;
+    background: transparent;
+    border: 1px solid #f4f4f4;
+    color: #f4f4f4;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.3s;
+}
+
+.btn-send:hover {
+    background-color: #f4f4f4;
+    color: #0b4f4a;
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin-top: 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        margin: 0 auto;
+    }
+
+    .nav-links {
+        display: none; /* Sembunyikan menu di mobile untuk simplifikasi */
+    }
+
+    .hero-image-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .about-page-section {
+        padding: 80px 20px 50px;
+        min-height: auto;
+    }
+
+    .about-title {
+        font-size: 1.6rem;
+    }
+
+    .about-content {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .btn-download {
+        padding: 12px 25px;
+        font-size: 0.85rem;
+    }
+    .page-selection {
+        padding: 80px 20px 40px;
+        min-height: auto;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
