@@ -5,6 +5,9 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -123,8 +126,16 @@ section {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: -30px; /* Menarik ke atas sedikit */
+    margin-top: -60px; /* Menarik ke atas sedikit */
     margin-bottom: 50px;
+}
+
+
+.social-icons img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    object-position:center;
 }
 
 .social-icons a {
