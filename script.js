@@ -23,7 +23,6 @@ function handleSubmit() {
 
 // alert("nomor berhasil dimasukkan")
 
-
 const form = document.getElementById('formSection')
 
 form.addEventListener('submit', function(e) {
@@ -49,7 +48,7 @@ form.addEventListener('submit', function(e) {
     }
 
     const phonePattern = /^[0-9]{10}$/;
-    if (phone === '' || !phonePattern.test(phone)) {
+    if (phone === '' || !phonePattern.test(telp)) {
         console.log('error [Phone]: masukkan nomor telepon yang valid')
         isValid = false;
     }
