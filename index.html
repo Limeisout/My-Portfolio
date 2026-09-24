@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <button class="hamburger" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1 id="Namaku">Ilham Aunillah</h1>
+            <p>Computer Science student at Jember University</p>
+        </div>
+        <div class="hero-image-container">
+            <img src="Foto Portofolio.jpg" alt="Profile Photo" class="profile-img">
+        </div>
+    </section>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+        <a href="https://github.com/limeisout" target="_blank"><i class="icon-github"><img src="github-logo_svgstack_com_50361790134791.png"></i></a>
+        <a href="https://discordapp.com/users/868107691380322326"><i class="icon-discord"><img src="monocolor-discord-logo_svgstack_com_4631790134740.png"></i></a>
+        <a href="https://www.instagram.com/i.am.aunillah/" target="_blank"><i class="icon-instagram"><img src="black-white-instagram-logo_svgstack_com_4141790134758.png"></i></a>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-page-section">
+        <h2 class="about-title">ABOUT ME</h2>
+
+        <p class="about-content">mahasiswa prodi informatika fakultas ilmu komputer universits jember. 
+            sedang belajar pengembangan berbasis website (HTML, CSS javascript), C# serta memiliki skill tingkat menengah dalam C++ 
+            dan creative software seperti Blender.</p>
+
+        <a id="downloadBtn" class="btn-download">
+            DOWNLOAD CV
+        </a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h2 class="section-title">RECENT PROJECTS</h2>
+        <p class="section-desc">Kumpulan project yang telah saya buat serta berkontribusi.</p>
+
+        <div class="projects-grid">
+            <div class="projects-card">
+                <img src="Screenshot 2026-09-24 141449.png" alt="Project 1">
+                <h2>Sistem Penyortiran Barang Sederhana</h2>
+            </div>
+
+            <div class="projects-card">
+                <img src="Screenshot 2026-09-24 135419.png" alt="Project 2">
+                <h2>Kalkulator Sederhana</h2>
+            </div>
+
+            <!-- <div class="projects-card">
+                <img src="https://usefulpix.com/ph/800x600/3B82F6" alt="Project 3">
+                <h2>Project 3</h2>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section  id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+        <form id="formSection" class="contact-form" novalidate>
+            <div class="input-group">
+                <input id="Name" type="text" placeholder="Name">
+            </div>
+            <div class="input-group">
+                <input id="Email" type="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <input id="phoneNumber" type="tel" placeholder="Phone" required>
+            </div>
+            <div class="input-group">
+                <textarea id="Message" placeholder="Message" required></textarea>
+            </div>
+            <button type="submit" class="btn-send">    
+                SEND MESSAGE
+            </button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
