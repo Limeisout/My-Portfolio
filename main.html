@@ -25,13 +25,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home", class="hero">
+    <section id="home" class="hero">
         <div class="hero-text">
             <h1 id="Namaku">Ilham Aunillah</h1>
             <p>Computer Science student at Jember University</p>
         </div>
         <div class="hero-image-container">
-            <img src="https://via.placeholder.com/300" alt="Profile Photo" class="profile-img">
+            <img src="Foto Portofolio.jpg" alt="Profile Photo" class="profile-img">
         </div>
     </section>
 
@@ -43,12 +43,12 @@
     </div>
 
     <!-- About Section -->
-    <section id="about", class="about-page-section">
+    <section id="about" class="about-page-section">
         <h2 class="about-title">ABOUT ME</h2>
 
         <p class="about-content"></p>
 
-        <a href="#" class="btn-download">
+        <a id="downloadBtn" class="btn-download">
             DOWNLOAD CV
         </a>
     </section>
@@ -56,7 +56,7 @@
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <h2 class="section-title">RECENT PROJECTS</h2>
-        <p class="section-desc">awawawawawawa</p>
+        <p class="section-desc">Kumpulan project yang telah saya buat serta berkontribusi.</p>
 
         <div class="projects-grid">
             <div class="projects-card">
@@ -79,15 +79,15 @@
     <!-- Contacts Section -->
     <section  id="contact" class="contact-section">
         <h2>Contact Me</h2>
-        <form id="formSection" onsubmit="return handleSubmit()" class="contact-form">
+        <form id="formSection" class="contact-form" novalidate>
             <div class="input-group">
-                <input id="Name" type="text" placeholder="Name" required>
+                <input id="Name" type="text" placeholder="Name">
             </div>
             <div class="input-group">
                 <input id="Email" type="email" placeholder="Email" required>
             </div>
             <div class="input-group">
-                <input id="phoneNumber" onchange="phoneNumberValidation()" type="tel" placeholder="Phone" required>
+                <input id="phoneNumber" type="tel" placeholder="Phone" required>
             </div>
             <div class="input-group">
                 <textarea id="Message" placeholder="Message" required></textarea>
@@ -98,5 +98,6 @@
         </form>
     </section>
 
+    <script src="script.js"></script>
 </body>
 </html>

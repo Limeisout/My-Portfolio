@@ -1,27 +1,26 @@
-// Supaya tidak reload setiap klik tombol
-function handleSubmit() {
-    return false;
-}
+const hamburger = document.querySelector('.hamburger');
+const navlinks = document.querySelector('.nav-links')
 
-// Form phone validation
-// const pattern = /^\+?\d{8,15}$/;
+hamburger.addEventListener('click', function () {
+    const isOpen = navlinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen);
+});
 
+navlinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+        navlinks.classList.remove('active');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false')
+    })
+});
 
-// const phoneInput = document.getElementById('phoneNumber');
-// const phoneValue = phoneInput.value.trim();
+document.getElementById('downloadBtn').addEventListener('click', function (a) {
+    a.preventDefault()
+    const pdfUrl = 'https://drive.google.com/file/d/1Usyyx-Iiw9M4-yJfu55KFVkg9xK1DOSC/view?usp=drive_link';
 
-// if(!phoneValue) {
-//     window.alert("Harap masukkan nomor telepon anda!")
-//     phoneInput.focus()
-//     return;
-// }
-
-// if (!pattern.test(phoneValue)) {
-//     window.alert("Harap masukkan nomor yang valid!")
-//     return;
-// }
-
-// alert("nomor berhasil dimasukkan")
+    window.open(pdfUrl, '_blank');
+})
 
 const form = document.getElementById('formSection')
 
@@ -35,30 +34,23 @@ form.addEventListener('submit', function(e) {
 
     let isValid = true;
 
-    if (name === '') {
-        console/log('error [Name]: Nama harus di isi')
+    if (!name || !email || !telp || !msg) {
+        window.alert('harap isi form dengan lengkap')
         isValid = false;
     }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (email == '' || !emailPattern.test(email)) {
-        console.log('error [Email]: masukkan email yang valid')
+    if (!emailPattern.test(email)) {
+        window.alert('error [Email]: masukkan email yang valid')
         isValid = false;
     }
 
-    const phonePattern = /^[0-9]{10}$/;
-    if (phone === '' || !phonePattern.test(telp)) {
-        console.log('error [Phone]: masukkan nomor telepon yang valid')
-        isValid = false;
-    }
-
-    if (msg === '') {
-        console.log('error [Message]: pesan harus di isi')
+    const phonePattern = /^[0-9]{10,13}$/;
+    if (!phonePattern.test(telp)) {
+        window.alert('error [Phone]: masukkan nomor telepon yang valid')
         isValid = false;
     }
 
     if (isValid) {
-        console.log('Formulir berhasil di kirim')
+        window.alert('Formulir berhasil di kirim')
     }
 });

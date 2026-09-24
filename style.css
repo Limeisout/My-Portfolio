@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --nav-h: 70px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -27,10 +31,46 @@ section {
 
 /* --- Navbar --- */
 .navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-h);
+    z-index: 100;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px 5%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: #0b4f4a;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .nav-links {
@@ -63,11 +103,11 @@ section {
 } */
 
 .hero {
-    min-height: 100dvh;
-    flex-direction: row;
+    min-height: calc(100dvh - var(--nav-h));
+    flex-direction: column-reverse;
     justify-content: space-between;
-    text-align: left;
-    padding-top: 120px;
+    text-align: center;
+    padding-top: 40px;
 }
 
 .hero-text {
@@ -365,7 +405,7 @@ section {
     .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 20px;
+        padding-top: 40px;
     }
 
     .hero-text {
@@ -381,8 +421,35 @@ section {
         margin: 0 auto;
     }
 
+    .navbar {
+        justify-content: flex-end;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
     .nav-links {
-        display: none; /* Sembunyikan menu di mobile untuk simplifikasi */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background-color: #f4f4f4;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    }
+
+    .nav-links.active {
+        max-height: 300px;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
     }
 
     .hero-image-container {
